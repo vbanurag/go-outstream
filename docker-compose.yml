@@ -1,0 +1,15 @@
+version: '3'
+services:
+  outstream-agg:
+    build: .
+    image: outstream-agg
+    ports:
+      - '9000:9000'
+    restart: on-failure
+    networks:
+      - retail-network
+
+networks:
+  retail-network:
+    driver: bridge
+
